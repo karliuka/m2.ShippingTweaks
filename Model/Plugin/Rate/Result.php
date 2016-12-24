@@ -21,13 +21,33 @@
  */
 namespace Faonni\ShippingTweaks\Model\Plugin\Rate; 
 
+use Faonni\ShippingTweaks\Helper\Data as ShippingTweaksHelper;
+
 /**
  * Plugin for \Magento\Shipping\Model\Rate\Result
  */
 class Result
-{
+{   
     /**
-     * Return all quotes in the result
+     * Helper instance
+     *
+     * @var \Faonni\ShippingTweaks\Helper\Data
+     */
+    protected $_helper;
+    
+    /**
+     * Factory constructor
+     *
+     * @param \Faonni\ShippingTweaks\Helper\Data $helper
+     */
+    public function __construct(
+        ShippingTweaksHelper $helper
+    ) {
+        $this->_helper = $helper;
+    }
+        	
+    /**
+     * Return all rates in the result
      *
      * @param $subject Magento\Shipping\Model\Rate\Result
      * @param $result \Magento\Quote\Model\Quote\Address\RateResult\Method[]
@@ -35,12 +55,27 @@ class Result
      */	
     public function afterGetAllRates($subject, $result) 
     {
+        if (!$this->_helper->isEnabled()) {
+            return $result;
+        }       		
+		$rates = $this->getAllFreeRates($result);              
+        return (count($rates) > 0) ? $rates : $result;
+    }	
+        	
+    /**
+     * Return all free rates in the result
+     *
+     * @param $result \Magento\Quote\Model\Quote\Address\RateResult\Method[]
+     * @return \Magento\Quote\Model\Quote\Address\RateResult\Method[]
+     */	
+    public function getAllFreeRates($result) 
+    {	
 		$rates = [];
         foreach ($result as $rate) {
             if ($rate->getPrice() == 0) {
                 $rates[] = $rate;
             }
-        }       
-        return (count($rates) > 0) ? $rates : $result;
-    }	
+        }               
+        return $rates;
+    }	    
 }
