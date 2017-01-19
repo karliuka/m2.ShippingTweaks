@@ -25,14 +25,14 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="shipping">
-            <group id="behavior" translate="label" type="text" sortOrder="301" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="behavior" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="310">
                 <label>Behavior of Methods</label>
                 <field id="tweaks" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Tweaks Mode</label>
                     <comment>Hides any other shipping methods if free shipping is available.</comment>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>                      
-				</field>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
             </group>
-        </section>		
+        </section>
     </system>
 </config>
