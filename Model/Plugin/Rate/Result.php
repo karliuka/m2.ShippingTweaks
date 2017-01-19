@@ -71,7 +71,7 @@ class Result
     public function getAllFreeRates($result) 
     {	
 		$rates = [];
-        foreach ($result as $rate) {
+        foreach ($result ?: [] as $rate) {
             if ($rate->getPrice() == 0) {
                 $rates[] = $rate;
             }
