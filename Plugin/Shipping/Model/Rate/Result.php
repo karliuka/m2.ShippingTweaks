@@ -4,26 +4,26 @@
  * 
  * See COPYING.txt for license details.
  */
-namespace Faonni\ShippingTweaks\Model\Plugin\Rate; 
+namespace Faonni\ShippingTweaks\Plugin\Shipping\Model\Rate; 
 
 use Faonni\ShippingTweaks\Helper\Data as ShippingTweaksHelper;
 
 /**
- * Plugin for \Magento\Shipping\Model\Rate\Result
+ * Shipping Result Plugin
  */
 class Result
 {   
     /**
-     * Helper instance
+     * Helper
      *
      * @var \Faonni\ShippingTweaks\Helper\Data
      */
     protected $_helper;
     
     /**
-     * Factory constructor
-     *
-     * @param \Faonni\ShippingTweaks\Helper\Data $helper
+     * Initialize Plugin
+     * 
+     * @param ShippingTweaksHelper $helper
      */
     public function __construct(
         ShippingTweaksHelper $helper
@@ -32,11 +32,11 @@ class Result
     }
         	
     /**
-     * Return all rates in the result
+     * Return all Rates in the Result
      *
-     * @param $subject Magento\Shipping\Model\Rate\Result
-     * @param $result \Magento\Quote\Model\Quote\Address\RateResult\Method[]
-     * @return \Magento\Quote\Model\Quote\Address\RateResult\Method[]
+     * @param Result $subject
+     * @param Method[] $result
+     * @return Method[]
      */	
     public function afterGetAllRates($subject, $result) 
     {
@@ -48,10 +48,10 @@ class Result
     }	
         	
     /**
-     * Return all free rates in the result
+     * Return all free Rates in the Result
      *
-     * @param $result \Magento\Quote\Model\Quote\Address\RateResult\Method[]
-     * @return \Magento\Quote\Model\Quote\Address\RateResult\Method[]
+     * @param Method[] $result
+     * @return Method[]
      */	
     public function getAllFreeRates($result) 
     {	

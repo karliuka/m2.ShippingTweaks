@@ -10,27 +10,27 @@ use Magento\Store\Model\ScopeInterface;
 use Magento\Framework\App\Helper\AbstractHelper;
 
 /**
- * Faonni ShippingTweaks Data helper
+ * Shipping Tweaks Helper
  */
 class Data extends AbstractHelper
 {
     /**
-     * Enabled config path
+     * Enabled Config Path
      */
-    const XML_TWEAKS_ENABLED = 'shipping/behavior/tweaks';
+    const XML_CONFIG_ENABLED = 'shipping/behavior/tweaks';
  	
     /**
-     * Check Tweaks mode functionality should be enabled
+     * Check Tweaks mode Functionality Should be Enabled
      *
      * @return bool
      */
     public function isEnabled()
     {
-        return $this->_getConfig(self::XML_TWEAKS_ENABLED);
+        return $this->_getConfig(self::XML_CONFIG_ENABLED);
     } 
 
     /**
-     * Retrieve store configuration data
+     * Retrieve Store Configuration Data
      *
      * @param   string $path
      * @return  string|null
