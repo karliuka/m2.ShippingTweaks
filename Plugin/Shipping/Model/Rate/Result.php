@@ -57,7 +57,7 @@ class Result
     {	
 		$rates = [];
         foreach ($result ?: [] as $rate) {
-            if ($rate->getPrice() == 0) {
+            if ($rate->getPrice() < 0.0001) {
                 $rates[] = $rate;
             }
         }               
