@@ -1,7 +1,6 @@
 <?php
 /**
- * Copyright © 2011-2018 Karliuka Vitalii(karliuka.vitalii@gmail.com)
- * 
+ * Copyright © Karliuka Vitalii(karliuka.vitalii@gmail.com)
  * See COPYING.txt for license details.
  */
 namespace Faonni\ShippingTweaks\Setup;
@@ -35,7 +34,7 @@ class Uninstall implements UninstallInterface
     }
     
     /**
-     * Uninstall DB Schema for a Module ShippingTweaks
+     * Uninstall DB Schema
      *
      * @param SchemaSetupInterface $setup
      * @param ModuleContextInterface $context
