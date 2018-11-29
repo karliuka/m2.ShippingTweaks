@@ -15,7 +15,7 @@ Extension hides any other shipping methods if free shipping is available.
 
 ## Compatibility
 
-Magento CE(EE) 2.0.x, 2.1.x, 2.2.x
+Magento CE(EE) 2.0.x, 2.1.x, 2.2.x, 2.3.x
 
 ## Install
 
