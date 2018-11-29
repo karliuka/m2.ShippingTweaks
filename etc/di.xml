@@ -7,9 +7,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-	<!--
-	plugin
-	-->		
+	<!-- plugin -->		
     <type name="\Magento\Shipping\Model\Rate\Result">
         <plugin name="Faonni_ShippingTweaks" type="Faonni\ShippingTweaks\Plugin\Shipping\Model\Rate\Result" />
     </type>
