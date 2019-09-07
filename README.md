@@ -1,7 +1,7 @@
 # Magento2 Shipping Tweaks
 
 [![Total Downloads](https://poser.pugx.org/faonni/module-shipping-tweaks/downloads)](https://packagist.org/packages/faonni/module-shipping-tweaks)
-[![Latest Stable Version](https://poser.pugx.org/faonni/module-shipping-tweaks/v/stable)](https://packagist.org/packages/faonni/module-shipping-tweaks)	
+[![Latest Stable Version](https://poser.pugx.org/faonni/module-shipping-tweaks/v/stable)](https://packagist.org/packages/faonni/module-shipping-tweaks)
 
 Extension hides any other shipping methods if free shipping is available.
 
@@ -29,9 +29,9 @@ Magento CE(EE) 2.0.x, 2.1.x, 2.2.x, 2.3.x
     composer require faonni/module-shipping-tweaks
     ```
    Wait while dependencies are updated.
-   
+
 #### Manual Installation
-   
+
 1. Create a folder {Magento root}/app/code/Faonni/ShippingTweaks
 
 2. Download the corresponding [latest version](https://github.com/karliuka/m2.ShippingTweaks/releases)
@@ -45,9 +45,9 @@ Magento CE(EE) 2.0.x, 2.1.x, 2.2.x, 2.3.x
 2. Enter following commands:
 
     ```bash
-	php bin/magento setup:upgrade
-	php bin/magento setup:di:compile
-	php bin/magento setup:static-content:deploy  (optional)
+    php bin/magento setup:upgrade
+    php bin/magento setup:di:compile
+    php bin/magento setup:static-content:deploy  (optional)
 
 ### Configuration
 
@@ -66,9 +66,9 @@ This works only with modules defined as Composer packages.
 
     ```bash
     php bin/magento module:uninstall -r Faonni_ShippingTweaks
-  
+
 #### Remove Extension
-    
+
 1. Go to Magento2 root folder
 
 2. Enter following commands to remove:
@@ -84,6 +84,6 @@ This works only with modules defined as Composer packages.
 2. Enter following commands:
 
     ```bash
-	php bin/magento setup:upgrade
-	php bin/magento setup:di:compile
-	php bin/magento setup:static-content:deploy  (optional)
+    php bin/magento setup:upgrade
+    php bin/magento setup:di:compile
+    php bin/magento setup:static-content:deploy  (optional)

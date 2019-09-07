@@ -17,7 +17,7 @@ class Data extends AbstractHelper
      * Enabled Config Path
      */
     const XML_CONFIG_ENABLED = 'shipping/behavior/tweaks';
- 	
+
     /**
      * Check Tweaks mode Functionality Should be Enabled
      *
@@ -26,7 +26,7 @@ class Data extends AbstractHelper
     public function isEnabled()
     {
         return $this->_getConfig(self::XML_CONFIG_ENABLED);
-    } 
+    }
 
     /**
      * Retrieve Store Configuration Data
@@ -37,5 +37,5 @@ class Data extends AbstractHelper
     protected function _getConfig($path)
     {
         return $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE);
-    }      
+    }
 }
