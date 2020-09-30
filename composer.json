@@ -11,7 +11,7 @@
 		"OSL-3.0"
 	],
 	"require": {
-		"magento/module-shipping": "100.0.*|100.1.*|100.2.*|100.3.*"		
+		"magento/module-shipping": "100.0.*|100.1.*|100.2.*|100.3.*|100.4.*"		
 	},
 	"autoload": {
 		"files": [ 
