@@ -15,13 +15,27 @@ Extension hides any other shipping methods if free shipping is available.
 
 ## Compatibility
 
-Magento CE(EE) 2.0.x, 2.1.x, 2.2.x, 2.3.x
+Magento CE(EE) 2.0.x, 2.1.x, 2.2.x, 2.3.x, 2.4.x
 
 ## Install
 
 #### Install via Composer (recommend)
 
 1. Go to Magento2 root folder
+
+     For Magento CE (EE) 2.0.x, 2.1.x, 2.2.x, 2.3.x
+
+    ```bash
+    composer require faonni/module-shipping-tweaks:2.0.*
+    ```
+
+     For Magento CE (EE) 2.4.x
+
+    ```bash
+    composer require faonni/module-shipping-tweaks:2.4.*
+    ```
+
+   Wait while dependencies are updated.
 
 2. Enter following commands to install module:
 
