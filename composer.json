@@ -6,19 +6,19 @@
     "authors": [{
         "name": "Karliuka Vitalii",
         "email": "karliuka.vitalii@gmail.com"
-    }],
-    "license": [
-        "OSL-3.0"
-    ],
-    "require": {
-        "magento/module-shipping": "100.0.*|100.1.*|100.2.*|100.3.*"
-    },
-    "autoload": {
-        "files": [
-            "registration.php" 
-        ],
-        "psr-4": {
-            "Faonni\\ShippingTweaks\\": ""
-        }
-    }
+    }],		
+	"license": [
+		"OSL-3.0"
+	],
+	"require": {
+		"magento/module-shipping": "100.0.*|100.1.*|100.2.*|100.3.*|100.4.*"		
+	},
+	"autoload": {
+		"files": [ 
+			"registration.php" 
+		],
+		"psr-4": {
+			"Faonni\\ShippingTweaks\\": ""
+		}
+	}
 }
