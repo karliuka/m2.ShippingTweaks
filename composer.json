@@ -2,23 +2,23 @@
     "name": "faonni/module-shipping-tweaks",
     "description": "Extension hides any other shipping methods if free shipping is available.",
     "type": "magento2-module",
-	"version": "2.0.10",
+    "version": "2.0.10",
     "authors": [{
-        "name" : "Karliuka Vitalii",
+        "name": "Karliuka Vitalii",
         "email": "karliuka.vitalii@gmail.com"
-    }],		
-	"license": [
-		"OSL-3.0"
-	],
-	"require": {
-		"magento/module-shipping": "100.0.*|100.1.*|100.2.*|100.3.*"		
-	},
-	"autoload": {
-		"files": [ 
-			"registration.php" 
-		],
-		"psr-4": {
-			"Faonni\\ShippingTweaks\\": ""
-		}
-	}
+    }],
+    "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "magento/module-shipping": "100.0.*|100.1.*|100.2.*|100.3.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php" 
+        ],
+        "psr-4": {
+            "Faonni\\ShippingTweaks\\": ""
+        }
+    }
 }
