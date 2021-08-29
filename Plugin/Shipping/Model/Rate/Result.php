@@ -57,22 +57,11 @@ class Result
     public function getAllFreeRates($result)
     {
         $rates = [];
-        $hasFreeShipping = 0;
-        
         foreach ($result ?: [] as $rate) {
-            if ($rate->getCarrier() == 'freeshipping') {
-                $hasFreeShipping = 1;
+            if ($rate->getPrice() < 0.0001 ) {
+                $rates[] = $rate;
             }
         }
-
-        if($hasFreeShipping) {
-            foreach ($result ?: [] as $rate) {                
-                if ($rate->getPrice() < 0.0001 ) {
-                    $rates[] = $rate;
-                }                            
-            }   
-        }    
-
         return $rates;
     }
 }
