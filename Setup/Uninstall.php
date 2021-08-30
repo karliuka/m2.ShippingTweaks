@@ -11,7 +11,7 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Config\Model\ResourceModel\Config\Data\CollectionFactory as ConfigCollectionFactory;
 
 /**
- * ShippingTweaks Uninstall
+ * ShippingTweaks uninstall
  */
 class Uninstall implements UninstallInterface
 {

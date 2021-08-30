@@ -10,7 +10,7 @@ use Magento\Shipping\Model\Rate\Result as Subject;
 use Faonni\ShippingTweaks\Helper\Data as ShippingTweaksHelper;
 
 /**
- * Shipping Result Plugin
+ * Shipping result plugin
  */
 class Result
 {

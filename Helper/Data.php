@@ -9,7 +9,7 @@ use Magento\Store\Model\ScopeInterface;
 use Magento\Framework\App\Helper\AbstractHelper;
 
 /**
- * Shipping tweaks helper
+ * Helper
  */
 class Data extends AbstractHelper
 {
