@@ -5,7 +5,7 @@
  */
 namespace Faonni\ShippingTweaks\Plugin\Shipping\Model\Rate;
 
-use Magento\Quote\Model\Quote\Address\RateResult\Method;
+use Magento\Quote\Model\Quote\Address\RateResult\AbstractResult;
 use Magento\Shipping\Model\Rate\Result as Subject;
 use Faonni\ShippingTweaks\Helper\Data as ShippingTweaksHelper;
 
@@ -15,14 +15,12 @@ use Faonni\ShippingTweaks\Helper\Data as ShippingTweaksHelper;
 class Result
 {
     /**
-     * Helper
-     *
      * @var ShippingTweaksHelper
      */
-    protected $helper;
+    private $helper;
 
     /**
-     * Initialize Plugin
+     * Initialize plugin
      *
      * @param ShippingTweaksHelper $helper
      */
@@ -33,35 +31,58 @@ class Result
     }
 
     /**
-     * Return all Rates in the Result
+     * Return all rates in the result
      *
      * @param Subject $subject
-     * @param Method[] $result
-     * @return Method[]
+     * @param AbstractResult[] $result
+     * @return AbstractResult[]
      */
     public function afterGetAllRates(Subject $subject, $result)
     {
-        if (!$this->helper->isEnabled()) {
-            return $result;
-        }
-        $rates = $this->getAllFreeRates($result);
-        return (count($rates) > 0) ? $rates : $result;
+        return $this->helper->isEnabled() ? $this->updateRates($result) : $result;
     }
 
     /**
-     * Return all free Rates in the Result
+     * Retrieve updated rates in the result
      *
-     * @param Method[] $result
-     * @return Method[]
+     * @param AbstractResult[] $result
+     * @return AbstractResult[]
      */
-    public function getAllFreeRates($result)
+    private function updateRates($result)
     {
-        $rates = [];
+        $freeRates = [];
+        $otherFreeRates = [];
+
         foreach ($result ?: [] as $rate) {
             if ($rate->getPrice() < 0.0001) {
-                $rates[] = $rate;
+                /* full code of shipping method */
+                $code = $rate->getCarrier() . '_' . $rate->getMethod();
+                if ($this->helper->isAllFreeMethods() ||
+                    in_array($code, $this->helper->getSpecificMethods())
+                ) {
+                    $freeRates[] = $rate;
+                } else {
+                    $otherFreeRates[] = $rate;
+                }
             }
         }
-        return $rates;
+        return $this->resolveResult($freeRates, $otherFreeRates, $result);
+    }
+
+    /**
+     * Resolve result
+     *
+     * @param AbstractResult[] $freeRates
+     * @param AbstractResult[] $otherFreeRates
+     * @param AbstractResult[] $result
+     * @return AbstractResult[]
+     */
+    private function resolveResult(array $freeRates, array $otherFreeRates, array $result)
+    {
+        if (0 < count($freeRates)) {
+            array_push($freeRates, ...$otherFreeRates);
+            return $freeRates;
+        }
+        return $result;
     }
 }
