@@ -6,3 +6,4 @@ parameters:
         - '#Call to an undefined method Magento\\Quote\\Model\\Quote\\Address\\RateResult\\AbstractResult::getPrice\(\).#'
         - '#Call to an undefined method Magento\\Quote\\Model\\Quote\\Address\\RateResult\\AbstractResult::getCarrier\(\).#'
         - '#Call to an undefined method Magento\\Quote\\Model\\Quote\\Address\\RateResult\\AbstractResult::getMethod\(\).#'
+        - '#method Magento\\Framework\\Data\\Collection::walk\(\) expects callable\(\):#'
