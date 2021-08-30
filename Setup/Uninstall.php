@@ -16,8 +16,6 @@ use Magento\Config\Model\ResourceModel\Config\Data\CollectionFactory as ConfigCo
 class Uninstall implements UninstallInterface
 {
     /**
-     * Config Collection Factory
-     *
      * @var ConfigCollectionFactory
      */
     protected $configCollectionFactory;
