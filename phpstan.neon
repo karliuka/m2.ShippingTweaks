@@ -3,4 +3,6 @@ parameters:
     checkPhpDocMissingReturn: true
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
-        - '#Call to an undefined method Magento\\Quote\\Model\\Quote\\Address\\RateResult\\Method::getPrice\(\).#'
+        - '#Call to an undefined method Magento\\Quote\\Model\\Quote\\Address\\RateResult\\AbstractResult::getPrice\(\).#'
+        - '#Call to an undefined method Magento\\Quote\\Model\\Quote\\Address\\RateResult\\AbstractResult::getCarrier\(\).#'
+        - '#Call to an undefined method Magento\\Quote\\Model\\Quote\\Address\\RateResult\\AbstractResult::getMethod\(\).#'
