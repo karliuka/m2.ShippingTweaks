@@ -61,9 +61,9 @@ class Result
                     in_array($code, $this->helper->getSpecificMethods())
                 ) {
                     $freeRates[] = $rate;
-                } else {
-                    $otherFreeRates[] = $rate;
+                    continue;
                 }
+                $otherFreeRates[] = $rate;
             }
         }
         return $this->resolveResult($freeRates, $otherFreeRates, $result);

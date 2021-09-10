@@ -3,10 +3,12 @@
     "description": "Extension hides any other shipping methods if free shipping is available.",
     "type": "magento2-module",
     "version": "2.0.11",
-    "authors": [{
-        "name": "Karliuka Vitalii",
-        "email": "karliuka.vitalii@gmail.com"
-    }],
+    "authors": [
+        {
+            "name": "Karliuka Vitalii",
+            "email": "karliuka.vitalii@gmail.com"
+        }
+    ],
     "license": [
         "OSL-3.0"
     ],
@@ -15,7 +17,7 @@
     },
     "autoload": {
         "files": [
-            "registration.php" 
+            "registration.php"
         ],
         "psr-4": {
             "Faonni\\ShippingTweaks\\": ""
