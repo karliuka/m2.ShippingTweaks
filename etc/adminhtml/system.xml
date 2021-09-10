@@ -17,6 +17,22 @@
                     <comment>Hides any other shipping methods if free shipping is available.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="all_free_methods" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Apply for All Free Methods</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="tweaks">1</field>
+                    </depends>
+                </field>
+                <field id="specific_methods" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Apply for Specific Free Methods</label>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allmethods</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="tweaks">1</field>
+                        <field id="all_free_methods">0</field>
+                    </depends>
+                </field>
             </group>
         </section>
     </system>
