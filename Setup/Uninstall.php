@@ -11,13 +11,11 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Config\Model\ResourceModel\Config\Data\CollectionFactory as ConfigCollectionFactory;
 
 /**
- * ShippingTweaks Uninstall
+ * ShippingTweaks uninstall
  */
 class Uninstall implements UninstallInterface
 {
     /**
-     * Config Collection Factory
-     *
      * @var ConfigCollectionFactory
      */
     protected $configCollectionFactory;
@@ -55,7 +53,7 @@ class Uninstall implements UninstallInterface
     protected function removeConfig()
     {
         $path = 'shipping/behavior';
-        /** @var \Magento\Config\Model\ResourceModel\Config\Data\Collection $collection */
+
         $collection = $this->configCollectionFactory->create();
         $collection->addPathFilter($path);
         $collection->walk('delete');

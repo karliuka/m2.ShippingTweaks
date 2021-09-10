@@ -11,6 +11,8 @@
         <shipping>
             <behavior>
                 <tweaks>1</tweaks>
+                <all_free_methods>1</all_free_methods>
+                <specific_methods>freeshipping_freeshipping</specific_methods>
             </behavior>
         </shipping>
     </default>
